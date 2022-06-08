@@ -23,7 +23,7 @@ CREATE TABLE Book.Author(
 
 --Create Book.Publisher Table
 CREATE TABLE Book.Publisher(
-	Publisher_ID INT PRIMARY KEY IDENTITY(1, 1),
+	Publisher_ID INT PRIMARY KEY IDENTITY(1,1),
 	Publisher_Name NVARCHAR(100) NULL
 	);
 
@@ -52,7 +52,7 @@ CREATE TABLE Person.Person_Phone(
 
 --Create Person.Person_Mail Table
 CREATE TABLE Person.Person_Mail(
-	Mail_ID INT PRIMARY KEY IDENTITY(1, 1),
+	Mail_ID INT PRIMARY KEY IDENTITY(1,1),
 	Mail NVARCHAR(MAX) NOT NULL,
 	SSN BIGINT UNIQUE NOT NULL
 	);
