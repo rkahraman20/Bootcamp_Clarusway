@@ -1,3 +1,3 @@
---
---
 
+use SampleRetail
+select * from
