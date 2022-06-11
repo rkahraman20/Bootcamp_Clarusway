@@ -79,7 +79,7 @@ INSERT INTO Person.Person(SSN)
 VALUES (42215274565)
 
 INSERT Person.Person(SSN, Person_FirstName, Person_LastName)
-VALUES (15078893526,'Mert','Yetiş')
+VALUES (15078893526,'Mert','Yetis')
 
 INSERT INTO Person.Person_Mail(Mail, SSN)
 VALUES
@@ -154,23 +154,35 @@ VALUES
 	('İş Bankası Yayıncılık'),
 	('Can Yayıncılık'),
 	('İletişim Yayıncılık')
-
 SELECT * FROM Book.Publisher
-
 DELETE FROM Book.Publisher
 
+
+
+INSERT Book.Publisher
+VALUES
+	('İş Bankası Yayıncılık'),
+	('Can Yayıncılık'),
+	('İletişim Yayıncılık')
+SELECT * FROM Book.Publisher
 DELETE FROM Book.Publisher
 WHERE Publisher_Name = 'İletişim Yayıncılık'
+SELECT * FROM Book.Publisher
 
 
 
 --DROP TABLE
+SELECT * FROM Person.Person2
 DROP TABLE Person.Person2
+SELECT * FROM Person.Person2
 
 
 
 --TRUNCATE TABLE
+SELECT * FROM Person.Person_Mail
 TRUNCATE TABLE Person.Person_Mail
+SELECT * FROM Person.Person_Mail
+
 TRUNCATE TABLE Person.Person
 TRUNCATE TABLE Book.Publisher
 
@@ -181,51 +193,38 @@ ALTER TABLE Book.Author
 	ALTER COLUMN Author_ID INT NOT NULL
 
 ALTER TABLE Book.Author
-	ADD CONSTRAINT PK_Author
-	PRIMARY KEY (Author_ID)
+	ADD CONSTRAINT PK_Author PRIMARY KEY (Author_ID)
 
 
 ALTER TABLE Book.Book
-	ADD CONSTRAINT FK_Author
-	FOREIGN KEY (Author_ID)
-	REFERENCES Book.Author(Author_ID)
+	ADD CONSTRAINT FK_Author FOREIGN KEY (Author_ID) REFERENCES Book.Author(Author_ID)
 
 
 
 ALTER TABLE Book.Book
-	ADD CONSTRAINT FK_Publisher
-	FOREIGN KEY (Publisher_ID)
-	REFERENCES Book.Publisher(Publisher_ID)
+	ADD CONSTRAINT FK_Publisher FOREIGN KEY (Publisher_ID) REFERENCES Book.Publisher(Publisher_ID)
 
 
 
 ALTER TABLE Person.Loan
-	ADD CONSTRAINT FK_Person
-	FOREIGN KEY (Book_ID)
-	REFERENCES Book.Book(Book_ID)
+	ADD CONSTRAINT FK_Person FOREIGN KEY (Book_ID) REFERENCES Book.Book(Book_ID)
 	ON UPDATE NO ACTION
 	ON DELETE NO ACTION
 
 
 
 ALTER TABLE Person.Person_Phone
-	ADD CONSTRAINT FK_Person_2
-	FOREIGN KEY (SSN)
-	REFERENCES Person.Person(SSN)
+	ADD CONSTRAINT FK_Person_2 FOREIGN KEY (SSN) REFERENCES Person.Person(SSN)
 
 
 
 ALTER TABLE Person.Person_Mail
-	ADD CONSTRAINT FK_Person_3
-	FOREIGN KEY (SSN)
-	REFERENCES Person.Person(SSN)
+	ADD CONSTRAINT FK_Person_3 FOREIGN KEY (SSN) REFERENCES Person.Person(SSN)
 
 
 
 ALTER TABLE Person.Loan
-	ADD CONSTRAINT FK_Book
-	FOREIGN KEY (SSN)
-	REFERENCES Person.Person(SSN)
+	ADD CONSTRAINT FK_Book FOREIGN KEY (SSN) REFERENCES Person.Person(SSN)
 	ON UPDATE NO ACTION
 	ON DELETE CASCADE
 
@@ -235,7 +234,6 @@ ALTER TABLE Person.Loan
 SELECT * FROM Person.Person
 
 ALTER TABLE Person.Person
-	ADD CONSTRAINT Check_SSN
-	CHECK (SSN > 9999999999 AND SSN < 999999999999)
+	ADD CONSTRAINT Check_SSN CHECK (SSN > 9999999999 AND SSN <= 99999999999)
 
 INSERT Person.Person (SSN) VALUES (89598855899)
