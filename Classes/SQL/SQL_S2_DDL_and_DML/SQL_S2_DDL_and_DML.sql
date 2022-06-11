@@ -77,4 +77,5 @@ INSERT INTO Person.Person_Mail (Mail, SSN) VALUES
 	('metsak@gmail.com', 66599524565)
 
 SELECT @@IDENTITY--last process last identity number
+
 SELECT @@ROWCOUNT--last process row count
