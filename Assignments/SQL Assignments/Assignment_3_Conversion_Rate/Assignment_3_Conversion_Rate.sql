@@ -3,10 +3,17 @@ CREATE TABLE Actions (Visitor_ID TINYINT, Adv_Type CHAR(1), [Action] VARCHAR(7))
 
 SELECT * FROM Actions;
 
-INSERT Actions VALUES  (1, 'A', 'Left'), (2, 'A', 'Order'), (3, 'B', 'Left'),
-					   (4, 'A', 'Order'), (5, 'A', 'Review'), (6, 'A', 'Left'),
-					   (7, 'B', 'Left'), (8, 'B', 'Order'),
-					   (9, 'B', 'Review'), (10, 'A', 'Review')
+INSERT Actions VALUES
+					(1, 'A', 'Left'),
+					(2, 'A', 'Order'),
+					(3, 'B', 'Left'),
+					(4, 'A', 'Order'),
+					(5, 'A', 'Review'),
+					(6, 'A', 'Left'),
+					(7, 'B', 'Left'),
+					(8, 'B', 'Order'),
+					(9, 'B', 'Review'),
+					(10, 'A', 'Review')
 
 SELECT * FROM Actions
 
