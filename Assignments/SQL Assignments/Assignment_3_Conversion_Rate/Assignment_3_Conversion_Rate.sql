@@ -25,7 +25,6 @@ CREATE VIEW Total_A AS
 
 SELECT * FROM Total_A
 
-
 SELECT Total_Order.Adv_Type, Total_Order, Total
 FROM Total_Order,Total_A
 WHERE Total_Order.Adv_Type = Total_A.Adv_Type
