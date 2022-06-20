@@ -11,7 +11,6 @@ ORDER BY product_name ASC
 
 SELECT COUNT (product_name) FROM product.product WHERE SUBSTRING(product_name, 1, 8) = 'Samsung'
 
-
 SELECT * FROM sale.customer
 
 SELECT COUNT (street) FROM sale.customer
